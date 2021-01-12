@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CAEE4AE25AD0F9800B65497 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEE4AD25AD0F9800B65497 /* Entry.swift */; };
+		6CAEE4B525AD126D00B65497 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEE4B425AD126D00B65497 /* EntryDetailViewController.swift */; };
+		6CAEE4B825AD15CD00B65497 /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEE4B725AD15CD00B65497 /* EntryListTableViewController.swift */; };
+		6CAEE4BD25AD336A00B65497 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEE4BC25AD336A00B65497 /* EntryController.swift */; };
 		7EDA120F259D233600BBD350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA120E259D233600BBD350 /* AppDelegate.swift */; };
 		7EDA1211259D233600BBD350 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA1210259D233600BBD350 /* SceneDelegate.swift */; };
 		7EDA1216259D233600BBD350 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EDA1214259D233600BBD350 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6CAEE4AD25AD0F9800B65497 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		6CAEE4B425AD126D00B65497 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		6CAEE4B725AD15CD00B65497 /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
+		6CAEE4BC25AD336A00B65497 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		7EDA120B259D233600BBD350 /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EDA120E259D233600BBD350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EDA1210259D233600BBD350 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,10 +43,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6CAEE4A725AD0ED400B65497 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6CAEE4AD25AD0F9800B65497 /* Entry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6CAEE4A925AD0EDC00B65497 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6CAEE4B725AD15CD00B65497 /* EntryListTableViewController.swift */,
+				6CAEE4B425AD126D00B65497 /* EntryDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		6CAEE4AB25AD0F2F00B65497 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		6CAEE4BA25AD332B00B65497 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6CAEE4BC25AD336A00B65497 /* EntryController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
 		7EDA1202259D233600BBD350 = {
 			isa = PBXGroup;
 			children = (
+				6CAEE4A725AD0ED400B65497 /* Models */,
+				6CAEE4BA25AD332B00B65497 /* Model Controller */,
+				6CAEE4A925AD0EDC00B65497 /* View Controllers */,
 				7EDA120D259D233600BBD350 /* Journal */,
+				7EDA1227259D237600BBD350 /* Views */,
+				7EDA1223259D234200BBD350 /* Resources */,
 				7EDA120C259D233600BBD350 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,8 +99,6 @@
 		7EDA120D259D233600BBD350 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
-				7EDA1223259D234200BBD350 /* Resources */,
-				7EDA1227259D237600BBD350 /* Storyboards */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -71,13 +114,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		7EDA1227259D237600BBD350 /* Storyboards */ = {
+		7EDA1227259D237600BBD350 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6CAEE4AB25AD0F2F00B65497 /* Storyboards */,
 				7EDA1214259D233600BBD350 /* Main.storyboard */,
 				7EDA1219259D233700BBD350 /* LaunchScreen.storyboard */,
 			);
-			path = Storyboards;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CAEE4BD25AD336A00B65497 /* EntryController.swift in Sources */,
+				6CAEE4AE25AD0F9800B65497 /* Entry.swift in Sources */,
+				6CAEE4B825AD15CD00B65497 /* EntryListTableViewController.swift in Sources */,
 				7EDA120F259D233600BBD350 /* AppDelegate.swift in Sources */,
+				6CAEE4B525AD126D00B65497 /* EntryDetailViewController.swift in Sources */,
 				7EDA1211259D233600BBD350 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,7 +348,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KMTDCPCY5V;
-				INFOPLIST_FILE = Journal/Resources/Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,7 +367,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KMTDCPCY5V;
-				INFOPLIST_FILE = Journal/Resources/Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
