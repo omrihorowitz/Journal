@@ -9,12 +9,19 @@ import UIKit
 
 class EntryListTableViewController: UITableViewController {
     
+    //MARK: - Outlets and Actions
+    
+    
+    
+    
+    //MARK: - Properties
+    var journal: Journal?
+    
     
 //MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        EntryController.shared.loadFromPersistenceStore()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,43 +31,41 @@ class EntryListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return EntryController.shared.entries.count
+        return journal?.entries.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)
 
-        let entry = EntryController.shared.entries[indexPath.row]
-
+        guard let entry = journal?.entries[indexPath.row] else { return cell}
+        
         cell.textLabel?.text = entry.title
+        cell.detailTextLabel?.text = entry.timestamp.dateToString()
 
         return cell
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let entryToDelete = EntryController.shared.entries[indexPath.row]
-            EntryController.shared.delete(entryToDelete: entryToDelete)
+            guard let journal = journal else { return }
+            let entryToDelete = journal.entries[indexPath.row]
+            EntryController.deleteEntry(entry: entryToDelete, journal: journal)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }    
     }
-
-
-
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
-    // IIDOO
-    
-    if segue.identifier == "toDetailVC" {
-        
-        guard let indexPath = tableView.indexPathForSelectedRow else {return}
-        guard let destination = segue.destination as? EntryDetailViewController else {return}
-        
-        let entry = EntryController.shared.entries[indexPath.row]
-        
-        destination.entry = entry
-        }
-    }
+           
+           guard let destination = segue.destination as? EntryDetailViewController,
+                 let journal = journal else { return }
+           if segue.identifier == "toDetailVC" {
+               guard let indexPath = tableView.indexPathForSelectedRow else { return }
+               let entryToSend = journal.entries[indexPath.row]
+               destination.journal = journal
+               destination.entry = entryToSend
+           } else if segue.identifier == "createNewEntry" {
+            destination.journal = journal
+           }
+       }
 }
+

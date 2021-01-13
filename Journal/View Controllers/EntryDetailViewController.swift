@@ -17,6 +17,7 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
               
     //MARK: - PROPERTIES
        var entry: Entry?
+    var journal: Journal?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -36,11 +37,13 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveBarButtonTapped(_ sender: Any) {
 
     guard let title = titleTextField.text, !title.isEmpty,
-      let body = bodyTextView.text, !body.isEmpty else {return}
-EntryController.shared.createEntryWith(newEntryTitle: title, newEntryBody: body)
-
-navigationController?.popViewController(animated: true)
-dismiss(animated: true, completion: nil)
+      let body = bodyTextView.text, !body.isEmpty,
+        let journal = journal else { return }
+        
+        EntryController.createEntryWith(newEntryTitle: title, newEntryBody: body, journal: journal)
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+        JournalController.shared.saveToPersistenceStore()
     }
 
     //MARK: - FUNCTIONS

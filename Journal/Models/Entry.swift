@@ -8,13 +8,11 @@
 import Foundation
 
 class Entry: Codable {
-    let title: String
-    let body: String
-    var timestamp: Double = 0.0
+    var title: String
+    var body: String
+    var timestamp: Date
     
-    
-    
-    init(title: String, body: String, timestamp: Double) {
+    init(title: String, body: String, timestamp: Date = Date()) {
         self.title = title
         self.body = body
         self.timestamp = timestamp
@@ -24,7 +22,7 @@ class Entry: Codable {
 
 extension Entry: Equatable {
     static func == (lhs: Entry, rhs: Entry) -> Bool {
-        return lhs.title == rhs.title && lhs.body == rhs.body // timestamp?
+        return lhs.timestamp == rhs.timestamp
 
     }
 }

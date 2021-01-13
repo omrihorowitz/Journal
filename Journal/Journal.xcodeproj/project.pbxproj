@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C7A924825AE4F140038B34A /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A924725AE4F140038B34A /* Journal.swift */; };
+		6C7A924C25AE558B0038B34A /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A924B25AE558B0038B34A /* JournalController.swift */; };
+		6C7A925025AE6FA50038B34A /* JournalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A924F25AE6FA50038B34A /* JournalListViewController.swift */; };
 		6CAEE4AE25AD0F9800B65497 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEE4AD25AD0F9800B65497 /* Entry.swift */; };
 		6CAEE4B525AD126D00B65497 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEE4B425AD126D00B65497 /* EntryDetailViewController.swift */; };
 		6CAEE4B825AD15CD00B65497 /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEE4B725AD15CD00B65497 /* EntryListTableViewController.swift */; };
 		6CAEE4BD25AD336A00B65497 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAEE4BC25AD336A00B65497 /* EntryController.swift */; };
+		6CCEB38E25AE090B00596B74 /* DateToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEB38D25AE090B00596B74 /* DateToString.swift */; };
 		7EDA120F259D233600BBD350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA120E259D233600BBD350 /* AppDelegate.swift */; };
 		7EDA1211259D233600BBD350 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA1210259D233600BBD350 /* SceneDelegate.swift */; };
 		7EDA1216259D233600BBD350 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EDA1214259D233600BBD350 /* Main.storyboard */; };
@@ -19,10 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C7A924725AE4F140038B34A /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
+		6C7A924B25AE558B0038B34A /* JournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
+		6C7A924F25AE6FA50038B34A /* JournalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListViewController.swift; sourceTree = "<group>"; };
 		6CAEE4AD25AD0F9800B65497 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		6CAEE4B425AD126D00B65497 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		6CAEE4B725AD15CD00B65497 /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
 		6CAEE4BC25AD336A00B65497 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		6CCEB38D25AE090B00596B74 /* DateToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateToString.swift; sourceTree = "<group>"; };
 		7EDA120B259D233600BBD350 /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EDA120E259D233600BBD350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EDA1210259D233600BBD350 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				6CAEE4AD25AD0F9800B65497 /* Entry.swift */,
+				6C7A924725AE4F140038B34A /* Journal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -56,6 +65,7 @@
 			children = (
 				6CAEE4B725AD15CD00B65497 /* EntryListTableViewController.swift */,
 				6CAEE4B425AD126D00B65497 /* EntryDetailViewController.swift */,
+				6C7A924F25AE6FA50038B34A /* JournalListViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -67,19 +77,29 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		6CAEE4BA25AD332B00B65497 /* Model Controller */ = {
+		6CAEE4BA25AD332B00B65497 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				6CAEE4BC25AD336A00B65497 /* EntryController.swift */,
+				6C7A924B25AE558B0038B34A /* JournalController.swift */,
 			);
-			path = "Model Controller";
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		6CCEB38C25AE08F300596B74 /* Helper & Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6CCEB38D25AE090B00596B74 /* DateToString.swift */,
+			);
+			path = "Helper & Extension";
 			sourceTree = "<group>";
 		};
 		7EDA1202259D233600BBD350 = {
 			isa = PBXGroup;
 			children = (
+				6CCEB38C25AE08F300596B74 /* Helper & Extension */,
 				6CAEE4A725AD0ED400B65497 /* Models */,
-				6CAEE4BA25AD332B00B65497 /* Model Controller */,
+				6CAEE4BA25AD332B00B65497 /* Model Controllers */,
 				6CAEE4A925AD0EDC00B65497 /* View Controllers */,
 				7EDA120D259D233600BBD350 /* Journal */,
 				7EDA1227259D237600BBD350 /* Views */,
@@ -195,8 +215,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CAEE4BD25AD336A00B65497 /* EntryController.swift in Sources */,
+				6C7A924C25AE558B0038B34A /* JournalController.swift in Sources */,
+				6CCEB38E25AE090B00596B74 /* DateToString.swift in Sources */,
 				6CAEE4AE25AD0F9800B65497 /* Entry.swift in Sources */,
+				6C7A924825AE4F140038B34A /* Journal.swift in Sources */,
 				6CAEE4B825AD15CD00B65497 /* EntryListTableViewController.swift in Sources */,
+				6C7A925025AE6FA50038B34A /* JournalListViewController.swift in Sources */,
 				7EDA120F259D233600BBD350 /* AppDelegate.swift in Sources */,
 				6CAEE4B525AD126D00B65497 /* EntryDetailViewController.swift in Sources */,
 				7EDA1211259D233600BBD350 /* SceneDelegate.swift in Sources */,
